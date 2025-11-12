@@ -72,30 +72,55 @@ npm run preview
 - Optional: create .env for Vite variables (e.g., VITE_API_BASE_URL).
 - Defaults to https://jsonplaceholder.typicode.com if not provided.
 
+
 ## Project Structure
+
 ```
 user-management-app/
-├── public/                 # Static assets
+├── public/              # Static assets
 ├── src/
-│   ├── app/                # App shell and routing
-│   │   ├── App.jsx
-│   │   ├── Layout.jsx
-│   │   └── routes.jsx
-│   ├── components/         # Reusable UI (Button, Input, Toast, Spinner, etc.)
-│   ├── context/            # ErrorBoundary, ToastProvider
-│   ├── features/
-│   │   └── users/          # api, mappers, validations
-│   ├── hooks/              # use-async, use-users
-│   ├── pages/              # Home, UserCreate, UserDetail, UserEdit, NotFound
-│   ├── styles/             # index.css
-│   └── utils/              # constants, errors, http, persisted-users
-├── index.html
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── postcss.config.js
+│   ├── app/            # App-level components and routing
+│   │   ├── App.jsx     # Main app component
+│   │   ├── Layout.jsx  # Layout wrapper
+│   │   └── routes.jsx  # Route configuration
+│   ├── components/     # Reusable UI components
+│   │   ├── Button/     # Button component
+│   │   ├── EmptyState/ # Empty state component
+│   │   ├── Input/      # Input field component
+│   │   ├── Spinner/    # Loading spinner
+│   │   ├── Toast/      # Toast notification
+│   │   ├── UserForm/   # User form component
+│   │   └── UserRow/    # User list item component
+│   ├── context/        # React context providers
+│   │   ├── ErrorBoundary.jsx    # Error boundary component
+│   │   └── ToastProvider.jsx    # Toast notification context
+│   ├── features/       # Feature-specific code
+│   │   └── users/      # User feature module
+│   │       ├── api.js         # API functions
+│   │       ├── mappers.js     # Data transformation
+│   │       └── validations.js # Form validation logic
+│   ├── hooks/          # Custom React hooks
+│   │   ├── use-async.js  # Async operation hook
+│   │   └── use-users.js  # User management hook
+│   ├── pages/          # Page components
+│   │   ├── Home/       # User list page
+│   │   ├── UserCreate/ # Create user page
+│   │   ├── UserDetail/ # User detail page
+│   │   ├── UserEdit/   # Edit user page
+│   │   └── NotFound/   # 404 page
+│   ├── styles/         # Global styles
+│   │   └── index.css   # Main stylesheet
+│   └── utils/          # Utility functions
+│       ├── constants.js        # App constants
+│       ├── errors.js           # Error handling utilities
+│       ├── http.js             # HTTP client
+│       └── persisted-users.js  # Local storage utilities
+├── index.html          # HTML entry point
+├── package.json        # Dependencies and scripts
+├── vite.config.js      # Vite configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── postcss.config.js   # PostCSS configuration
 ```
-
 
 ## API Integration
 - GET /users — list users.
@@ -168,3 +193,4 @@ Private repository — not licensed for public use.
 
 ## Contact
 For access or issues, contact the maintainer directly.
+
